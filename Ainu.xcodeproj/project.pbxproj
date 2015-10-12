@@ -10,6 +10,15 @@
 		BE721DB31BCB6FA300E29868 /* Ainu.h in Headers */ = {isa = PBXBuildFile; fileRef = BE721DB21BCB6FA300E29868 /* Ainu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE721DBA1BCB6FA300E29868 /* Ainu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE721DAF1BCB6FA300E29868 /* Ainu.framework */; settings = {ASSET_TAGS = (); }; };
 		BE721DBF1BCB6FA300E29868 /* AinuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721DBE1BCB6FA300E29868 /* AinuTests.swift */; };
+		BE721DF41BCB700E00E29868 /* Ainu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE721DEA1BCB700E00E29868 /* Ainu.framework */; settings = {ASSET_TAGS = (); }; };
+		BE721E051BCB719900E29868 /* Ainu.h in Headers */ = {isa = PBXBuildFile; fileRef = BE721DB21BCB6FA300E29868 /* Ainu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE721E0D1BCB74AF00E29868 /* Strength.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721E0C1BCB74AF00E29868 /* Strength.swift */; settings = {ASSET_TAGS = (); }; };
+		BE721E0E1BCB74AF00E29868 /* Strength.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721E0C1BCB74AF00E29868 /* Strength.swift */; settings = {ASSET_TAGS = (); }; };
+		BE721E261BCB8BD400E29868 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721E251BCB8BD400E29868 /* Validator.swift */; settings = {ASSET_TAGS = (); }; };
+		BE721E271BCB8BD400E29868 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721E251BCB8BD400E29868 /* Validator.swift */; settings = {ASSET_TAGS = (); }; };
+		BE721E291BCB8FA700E29868 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721E281BCB8FA700E29868 /* Rule.swift */; settings = {ASSET_TAGS = (); }; };
+		BE721E2A1BCB8FA700E29868 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721E281BCB8FA700E29868 /* Rule.swift */; settings = {ASSET_TAGS = (); }; };
+		BE721E2C1BCBC4D800E29868 /* AinuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721DBE1BCB6FA300E29868 /* AinuTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +29,13 @@
 			remoteGlobalIDString = BE721DAE1BCB6FA300E29868;
 			remoteInfo = Ainu;
 		};
+		BE721DF51BCB700E00E29868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE721DA61BCB6FA300E29868 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE721DE91BCB700E00E29868;
+			remoteInfo = Ainu_iOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +45,11 @@
 		BE721DB91BCB6FA300E29868 /* AinuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AinuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE721DBE1BCB6FA300E29868 /* AinuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AinuTests.swift; sourceTree = "<group>"; };
 		BE721DC01BCB6FA300E29868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE721DEA1BCB700E00E29868 /* Ainu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ainu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE721DF31BCB700E00E29868 /* Ainu_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ainu_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE721E0C1BCB74AF00E29868 /* Strength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strength.swift; sourceTree = "<group>"; };
+		BE721E251BCB8BD400E29868 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		BE721E281BCB8FA700E29868 /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +65,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE721DBA1BCB6FA300E29868 /* Ainu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DE61BCB700E00E29868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DF01BCB700E00E29868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721DF41BCB700E00E29868 /* Ainu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +100,8 @@
 			children = (
 				BE721DAF1BCB6FA300E29868 /* Ainu.framework */,
 				BE721DB91BCB6FA300E29868 /* AinuTests.xctest */,
+				BE721DEA1BCB700E00E29868 /* Ainu.framework */,
+				BE721DF31BCB700E00E29868 /* Ainu_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,8 +109,8 @@
 		BE721DB11BCB6FA300E29868 /* Ainu */ = {
 			isa = PBXGroup;
 			children = (
-				BE721DB21BCB6FA300E29868 /* Ainu.h */,
-				BE721DB41BCB6FA300E29868 /* Info.plist */,
+				BE721E061BCB71A800E29868 /* Source */,
+				BE721E071BCB71D900E29868 /* Supporting Files */,
 			);
 			path = Ainu;
 			sourceTree = "<group>";
@@ -86,6 +124,25 @@
 			path = AinuTests;
 			sourceTree = "<group>";
 		};
+		BE721E061BCB71A800E29868 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BE721E0C1BCB74AF00E29868 /* Strength.swift */,
+				BE721E251BCB8BD400E29868 /* Validator.swift */,
+				BE721E281BCB8FA700E29868 /* Rule.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		BE721E071BCB71D900E29868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE721DB21BCB6FA300E29868 /* Ainu.h */,
+				BE721DB41BCB6FA300E29868 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +151,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE721DB31BCB6FA300E29868 /* Ainu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DE71BCB700E00E29868 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721E051BCB719900E29868 /* Ainu.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,12 +201,49 @@
 			productReference = BE721DB91BCB6FA300E29868 /* AinuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BE721DE91BCB700E00E29868 /* Ainu_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE721DFB1BCB700E00E29868 /* Build configuration list for PBXNativeTarget "Ainu_iOS" */;
+			buildPhases = (
+				BE721DE51BCB700E00E29868 /* Sources */,
+				BE721DE61BCB700E00E29868 /* Frameworks */,
+				BE721DE71BCB700E00E29868 /* Headers */,
+				BE721DE81BCB700E00E29868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ainu_iOS;
+			productName = Ainu_iOS;
+			productReference = BE721DEA1BCB700E00E29868 /* Ainu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE721DF21BCB700E00E29868 /* Ainu_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE721DFE1BCB700E00E29868 /* Build configuration list for PBXNativeTarget "Ainu_iOSTests" */;
+			buildPhases = (
+				BE721DEF1BCB700E00E29868 /* Sources */,
+				BE721DF01BCB700E00E29868 /* Frameworks */,
+				BE721DF11BCB700E00E29868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE721DF61BCB700E00E29868 /* PBXTargetDependency */,
+			);
+			name = Ainu_iOSTests;
+			productName = Ainu_iOSTests;
+			productReference = BE721DF31BCB700E00E29868 /* Ainu_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BE721DA61BCB6FA300E29868 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Henrique Sasaki Yuya";
 				TargetAttributes = {
@@ -149,6 +251,12 @@
 						CreatedOnToolsVersion = 7.0.1;
 					};
 					BE721DB81BCB6FA300E29868 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					BE721DE91BCB700E00E29868 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					BE721DF21BCB700E00E29868 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
@@ -167,6 +275,8 @@
 			targets = (
 				BE721DAE1BCB6FA300E29868 /* Ainu */,
 				BE721DB81BCB6FA300E29868 /* AinuTests */,
+				BE721DE91BCB700E00E29868 /* Ainu_iOS */,
+				BE721DF21BCB700E00E29868 /* Ainu_iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +296,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE721DE81BCB700E00E29868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DF11BCB700E00E29868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -193,6 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE721E291BCB8FA700E29868 /* Rule.swift in Sources */,
+				BE721E261BCB8BD400E29868 /* Validator.swift in Sources */,
+				BE721E0D1BCB74AF00E29868 /* Strength.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +331,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE721DE51BCB700E00E29868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721E2A1BCB8FA700E29868 /* Rule.swift in Sources */,
+				BE721E271BCB8BD400E29868 /* Validator.swift in Sources */,
+				BE721E0E1BCB74AF00E29868 /* Strength.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DEF1BCB700E00E29868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721E2C1BCBC4D800E29868 /* AinuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -211,6 +356,11 @@
 			isa = PBXTargetDependency;
 			target = BE721DAE1BCB6FA300E29868 /* Ainu */;
 			targetProxy = BE721DBB1BCB6FA300E29868 /* PBXContainerItemProxy */;
+		};
+		BE721DF61BCB700E00E29868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE721DE91BCB700E00E29868 /* Ainu_iOS */;
+			targetProxy = BE721DF51BCB700E00E29868 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -302,6 +452,7 @@
 		BE721DC41BCB6FA300E29868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -311,15 +462,18 @@
 				INFOPLIST_FILE = Ainu/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.Ainu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BE721DC51BCB6FA300E29868 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -329,6 +483,7 @@
 				INFOPLIST_FILE = Ainu/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.Ainu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -357,6 +512,77 @@
 			};
 			name = Release;
 		};
+		BE721DFC1BCB700E00E29868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Ainu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.Ainu;
+				PRODUCT_NAME = Ainu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE721DFD1BCB700E00E29868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Ainu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.Ainu;
+				PRODUCT_NAME = Ainu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE721DFF1BCB700E00E29868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = AinuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.henrique.Ainu-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BE721E001BCB700E00E29868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = AinuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.henrique.Ainu-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -382,6 +608,22 @@
 			buildConfigurations = (
 				BE721DC71BCB6FA300E29868 /* Debug */,
 				BE721DC81BCB6FA300E29868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE721DFB1BCB700E00E29868 /* Build configuration list for PBXNativeTarget "Ainu_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE721DFC1BCB700E00E29868 /* Debug */,
+				BE721DFD1BCB700E00E29868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE721DFE1BCB700E00E29868 /* Build configuration list for PBXNativeTarget "Ainu_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE721DFF1BCB700E00E29868 /* Debug */,
+				BE721E001BCB700E00E29868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

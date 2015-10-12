@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Ainu.xcscheme</key>
+		<key>Ainu.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>Ainu_iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +23,26 @@
 			<true/>
 		</dict>
 		<key>BE721DB81BCB6FA300E29868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE721DCD1BCB6FCA00E29868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE721DD61BCB6FCA00E29868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE721DE91BCB700E00E29868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE721DF21BCB700E00E29868</key>
 		<dict>
 			<key>primary</key>
 			<true/>

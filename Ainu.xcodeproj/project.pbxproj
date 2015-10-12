@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE721DB31BCB6FA300E29868 /* Ainu.h in Headers */ = {isa = PBXBuildFile; fileRef = BE721DB21BCB6FA300E29868 /* Ainu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE721DBA1BCB6FA300E29868 /* Ainu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE721DAF1BCB6FA300E29868 /* Ainu.framework */; settings = {ASSET_TAGS = (); }; };
+		BE721DBF1BCB6FA300E29868 /* AinuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE721DBE1BCB6FA300E29868 /* AinuTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE721DBB1BCB6FA300E29868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE721DA61BCB6FA300E29868 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE721DAE1BCB6FA300E29868;
+			remoteInfo = Ainu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE721DAF1BCB6FA300E29868 /* Ainu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ainu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE721DB21BCB6FA300E29868 /* Ainu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ainu.h; sourceTree = "<group>"; };
+		BE721DB41BCB6FA300E29868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE721DB91BCB6FA300E29868 /* AinuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AinuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE721DBE1BCB6FA300E29868 /* AinuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AinuTests.swift; sourceTree = "<group>"; };
+		BE721DC01BCB6FA300E29868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE721DAB1BCB6FA300E29868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DB61BCB6FA300E29868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721DBA1BCB6FA300E29868 /* Ainu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE721DA51BCB6FA300E29868 = {
+			isa = PBXGroup;
+			children = (
+				BE721DB11BCB6FA300E29868 /* Ainu */,
+				BE721DBD1BCB6FA300E29868 /* AinuTests */,
+				BE721DB01BCB6FA300E29868 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE721DB01BCB6FA300E29868 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE721DAF1BCB6FA300E29868 /* Ainu.framework */,
+				BE721DB91BCB6FA300E29868 /* AinuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE721DB11BCB6FA300E29868 /* Ainu */ = {
+			isa = PBXGroup;
+			children = (
+				BE721DB21BCB6FA300E29868 /* Ainu.h */,
+				BE721DB41BCB6FA300E29868 /* Info.plist */,
+			);
+			path = Ainu;
+			sourceTree = "<group>";
+		};
+		BE721DBD1BCB6FA300E29868 /* AinuTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE721DBE1BCB6FA300E29868 /* AinuTests.swift */,
+				BE721DC01BCB6FA300E29868 /* Info.plist */,
+			);
+			path = AinuTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BE721DAC1BCB6FA300E29868 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721DB31BCB6FA300E29868 /* Ainu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BE721DAE1BCB6FA300E29868 /* Ainu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE721DC31BCB6FA300E29868 /* Build configuration list for PBXNativeTarget "Ainu" */;
+			buildPhases = (
+				BE721DAA1BCB6FA300E29868 /* Sources */,
+				BE721DAB1BCB6FA300E29868 /* Frameworks */,
+				BE721DAC1BCB6FA300E29868 /* Headers */,
+				BE721DAD1BCB6FA300E29868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ainu;
+			productName = Ainu;
+			productReference = BE721DAF1BCB6FA300E29868 /* Ainu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE721DB81BCB6FA300E29868 /* AinuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE721DC61BCB6FA300E29868 /* Build configuration list for PBXNativeTarget "AinuTests" */;
+			buildPhases = (
+				BE721DB51BCB6FA300E29868 /* Sources */,
+				BE721DB61BCB6FA300E29868 /* Frameworks */,
+				BE721DB71BCB6FA300E29868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE721DBC1BCB6FA300E29868 /* PBXTargetDependency */,
+			);
+			name = AinuTests;
+			productName = AinuTests;
+			productReference = BE721DB91BCB6FA300E29868 /* AinuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE721DA61BCB6FA300E29868 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Henrique Sasaki Yuya";
+				TargetAttributes = {
+					BE721DAE1BCB6FA300E29868 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					BE721DB81BCB6FA300E29868 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = BE721DA91BCB6FA300E29868 /* Build configuration list for PBXProject "Ainu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BE721DA51BCB6FA300E29868;
+			productRefGroup = BE721DB01BCB6FA300E29868 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE721DAE1BCB6FA300E29868 /* Ainu */,
+				BE721DB81BCB6FA300E29868 /* AinuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE721DAD1BCB6FA300E29868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DB71BCB6FA300E29868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE721DAA1BCB6FA300E29868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE721DB51BCB6FA300E29868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE721DBF1BCB6FA300E29868 /* AinuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE721DBC1BCB6FA300E29868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE721DAE1BCB6FA300E29868 /* Ainu */;
+			targetProxy = BE721DBB1BCB6FA300E29868 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BE721DC11BCB6FA300E29868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BE721DC21BCB6FA300E29868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE721DC41BCB6FA300E29868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Ainu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.Ainu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BE721DC51BCB6FA300E29868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Ainu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.Ainu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BE721DC71BCB6FA300E29868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AinuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.AinuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE721DC81BCB6FA300E29868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AinuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.henrique.AinuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE721DA91BCB6FA300E29868 /* Build configuration list for PBXProject "Ainu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE721DC11BCB6FA300E29868 /* Debug */,
+				BE721DC21BCB6FA300E29868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE721DC31BCB6FA300E29868 /* Build configuration list for PBXNativeTarget "Ainu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE721DC41BCB6FA300E29868 /* Debug */,
+				BE721DC51BCB6FA300E29868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE721DC61BCB6FA300E29868 /* Build configuration list for PBXNativeTarget "AinuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE721DC71BCB6FA300E29868 /* Debug */,
+				BE721DC81BCB6FA300E29868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE721DA61BCB6FA300E29868 /* Project object */;
+}

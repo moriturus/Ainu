@@ -222,7 +222,7 @@ public enum Strength: CustomStringConvertible {
 
         let entropyPerCharacter = log2(CGFloat(sizeOfCharacters))
 
-        return entropyPerCharacter * CGFloat(string.characters.count)
+        return entropyPerCharacter * CGFloat(string.utf16.count)
 
     }
 

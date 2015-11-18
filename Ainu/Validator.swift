@@ -30,7 +30,7 @@ public struct Validator {
     public typealias Rule = RuleType
 
     /// Result type
-    public enum Result {
+    public enum Result: Equatable {
 
         case OK
         case Failure([Rule])
@@ -76,31 +76,20 @@ public struct Validator {
     */
     public func validate(password: String) -> Validator.Result {
 
-        let failingRules = rules.filter { r -> Bool in
-
-            return !r.evaluate(password)
-
-        }
-
-        let result: Result
+        let failingRules = rules.filter { !$0.evaluate(password) }
 
         if failingRules.count == 0 {
 
-            result = .OK
+            return .OK
 
         } else {
 
-            result = .Failure(failingRules)
+            return .Failure(failingRules)
 
         }
-
-        return result
-
     }
 
 }
-
-extension Validator.Result: Equatable {}
 
 public func ==(lhs: Validator.Result, rhs: Validator.Result) -> Bool {
 

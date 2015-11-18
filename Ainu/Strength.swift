@@ -27,7 +27,7 @@ import Foundation
 import CoreGraphics
 
 /// Strength of password
-public enum Strength: CustomStringConvertible {
+public enum Strength: CustomStringConvertible, Comparable {
 
     /// The password is empty.
     case Empty
@@ -228,34 +228,8 @@ public enum Strength: CustomStringConvertible {
 
 }
 
-extension Strength: Comparable {}
-
-@inline(__always) private func c(lhs: Strength, _ rhs: Strength, _ handler: (Int, Int) -> Bool) -> Bool {
-
-    return handler(lhs.intValue, rhs.intValue)
-
-}
-
 public func <(lhs: Strength, rhs: Strength) -> Bool {
 
-    return c(lhs, rhs, <)
-
-}
-
-public func <=(lhs: Strength, rhs: Strength) -> Bool {
-
-    return c(lhs, rhs, <=)
-
-}
-
-public func >=(lhs: Strength, rhs: Strength) -> Bool {
-
-    return c(lhs, rhs, >=)
-
-}
-
-public func >(lhs: Strength, rhs: Strength) -> Bool {
-
-    return c(lhs, rhs, >)
+    return lhs.intValue < rhs.intValue
 
 }

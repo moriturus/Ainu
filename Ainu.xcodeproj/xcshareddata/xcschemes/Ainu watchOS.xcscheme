@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE846FB11BFBF9B10003F6F3"
-               BuildableName = "Ainu watchOS.framework"
+               BuildableName = "Ainu.framework"
                BlueprintName = "Ainu watchOS"
                ReferencedContainer = "container:Ainu.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE846FB11BFBF9B10003F6F3"
-            BuildableName = "Ainu watchOS.framework"
+            BuildableName = "Ainu.framework"
             BlueprintName = "Ainu watchOS"
             ReferencedContainer = "container:Ainu.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE846FB11BFBF9B10003F6F3"
-            BuildableName = "Ainu watchOS.framework"
+            BuildableName = "Ainu.framework"
             BlueprintName = "Ainu watchOS"
             ReferencedContainer = "container:Ainu.xcodeproj">
          </BuildableReference>

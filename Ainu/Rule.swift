@@ -195,6 +195,8 @@ public struct RequiredCharacterRule: RuleType {
 
 private let nonLowercaseCharacters = NSCharacterSet.lowercaseLetterCharacterSet().invertedSet
 
+#if os(OSX) || os(iOS) // tvOS does not have UIReferenceLibraryViewController class.
+
 /// Rule of non-dictionary word
 public struct NonDictionaryWordRule: RuleType {
 
@@ -225,6 +227,8 @@ public struct NonDictionaryWordRule: RuleType {
     }
 
 }
+    
+#endif
 
 /// Rule of password length
 public struct LengthRule: RuleType {

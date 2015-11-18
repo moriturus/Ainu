@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Ainu tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Ainu watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Ainu.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +22,7 @@
 		<key>Ainu_iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -43,6 +53,21 @@
 			<true/>
 		</dict>
 		<key>BE721DF21BCB700E00E29868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE846FB11BFBF9B10003F6F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE846FBE1BFBF9C30003F6F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE846FC71BFBF9C30003F6F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

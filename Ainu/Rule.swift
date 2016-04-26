@@ -242,9 +242,9 @@ public struct LengthRule: RuleType {
         public let maximum: UInt
 
         /// convert to `Range<Int>` structure
-        private var range: Range<Int> {
+        private var range: Range<UInt> {
 
-            return Range(start: Int(minimum), end: Int(maximum))
+            return minimum ..< maximum
 
         }
 
@@ -285,7 +285,7 @@ public struct LengthRule: RuleType {
 
     public func evaluate(string: String) -> Bool {
 
-        return length.range.contains(string.characters.count)
+        return length.range.contains(UInt(string.characters.count))
 
     }
 

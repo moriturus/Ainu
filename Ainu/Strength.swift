@@ -169,49 +169,49 @@ public enum Strength: CustomStringConvertible, Comparable {
 
         string.utf16.forEach { c in
 
-            if !includesLowercaseCharacter && NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesLowercaseCharacter && NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember(c) {
 
                 includesLowercaseCharacter = true
                 sizeOfCharacters += 26
 
             }
 
-            if !includesUppercaseCharacter && NSCharacterSet.uppercaseLetterCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesUppercaseCharacter && NSCharacterSet.uppercaseLetterCharacterSet().characterIsMember(c) {
 
                 includesUppercaseCharacter = true
                 sizeOfCharacters += 26
 
             }
 
-            if !includesDecimalDigitCharacter && NSCharacterSet.decimalDigitCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesDecimalDigitCharacter && NSCharacterSet.decimalDigitCharacterSet().characterIsMember(c) {
 
                 includesDecimalDigitCharacter = true
                 sizeOfCharacters += 10
 
             }
 
-            if !includesPunctuationCharacter && NSCharacterSet.punctuationCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesPunctuationCharacter && NSCharacterSet.punctuationCharacterSet().characterIsMember(c) {
 
                 includesPunctuationCharacter = true
                 sizeOfCharacters += 20
 
             }
 
-            if !includesSymbolCharacter && NSCharacterSet.symbolCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesSymbolCharacter && NSCharacterSet.symbolCharacterSet().characterIsMember(c) {
 
                 includesSymbolCharacter = true
                 sizeOfCharacters += 10
 
             }
 
-            if !includesWhitespaceCharacter && NSCharacterSet.whitespaceCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesWhitespaceCharacter && NSCharacterSet.whitespaceCharacterSet().characterIsMember(c) {
 
                 includesWhitespaceCharacter = true
                 sizeOfCharacters += 1
 
             }
 
-            if !includesNonBaseCharacter && NSCharacterSet.nonBaseCharacterSet().characterIsMember(UInt16(c.value)) {
+            if !includesNonBaseCharacter && NSCharacterSet.nonBaseCharacterSet().characterIsMember(c) {
 
                 includesNonBaseCharacter = true
                 sizeOfCharacters += 32 + 128

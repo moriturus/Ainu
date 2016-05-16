@@ -351,7 +351,7 @@ public struct RegularExpressionRule: RuleType {
 /// Rule with specified function.
 public struct FunctionalRule: RuleType {
 
-    public let localizedErrorDescription = NSLocalizedString("Must match regular expression", tableName: "Ainu", comment: "regex")
+    public let localizedErrorDescription = NSLocalizedString("Must match the rule of specified function", tableName: "Ainu", comment: "functional")
     private let function: String -> Bool
 
     /**
@@ -373,4 +373,32 @@ public struct FunctionalRule: RuleType {
 
     }
 
+}
+
+/// Rule of password strength
+public struct StrengthRule: RuleType {
+    
+    public var localizedErrorDescription: String {
+        return String(format: NSLocalizedString("Strength must be \"%@\" (and above)", tableName: "Ainu", comment: "strength"), "\(strength)")
+    }
+    private let strength: Strength
+    
+    
+    /**
+     
+     Initializes with specified `Strength`.
+     
+     - Parameter strength: The strength to be satisfied.
+     
+    */
+    public init(strength: Strength) {
+        self.strength = strength
+    }
+    
+    public func evaluate(string: String) -> Bool {
+        
+        return strength <= Strength(password: string)
+        
+    }
+    
 }

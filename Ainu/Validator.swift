@@ -38,7 +38,7 @@ public struct Validator {
     }
 
     /// rules
-    private let rules: [Rule]
+    private var rules: [Rule]
 
     /**
 
@@ -99,7 +99,7 @@ public func ==(lhs: Validator.Result, rhs: Validator.Result) -> Bool {
         return true
 
     case (.Failure(let lrs), .Failure(let rrs)):
-        return lrs.description == rrs.description
+        return lrs.count == rrs.count && lrs.description == rrs.description
 
     default:
         return false

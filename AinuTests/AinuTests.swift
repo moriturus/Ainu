@@ -358,6 +358,26 @@ class AinuTests: XCTestCase {
         
     }
     
+    func testStrengthRuleSuccess() {
+        
+        let password = "password02052016"
+        
+        let rule = StrengthRule(strength: .Reasonable)
+        let result = rule.evaluate(password)
+        
+        XCTAssertTrue(result, "password must be reasonable strength")
+        
+    }
     
-
+    func testStrengthRuleFailure() {
+        
+        let password = "12345"
+        
+        let rule = StrengthRule(strength: .Reasonable)
+        let result = rule.evaluate(password)
+        
+        XCTAssertFalse(result, "password must not be reasonable strength")
+        
+    }
+    
 }

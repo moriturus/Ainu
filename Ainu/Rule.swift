@@ -220,7 +220,7 @@ public struct NonDictionaryWordRule: RuleType {
 
         #elseif os(iOS)
 
-            return !UIReferenceLibraryViewController.dictionaryHasDefinitionForTerm(term)
+            return !UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: term)
 
         #endif
 

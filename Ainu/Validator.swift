@@ -32,8 +32,8 @@ public struct Validator {
     /// Result type
     public enum Result: Equatable {
 
-        case OK
-        case Failure([Rule])
+        case ok
+        case failure([Rule])
 
     }
 
@@ -71,20 +71,20 @@ public struct Validator {
 
     - parameter password: password string
 
-    - returns: Validation result. If the validation failed, `Failure([rule])` has the failing rules.
+    - returns: Validation result. If the validation failed, `failure([rule])` has the failing rules.
 
     */
-    public func validate(password: String) -> Validator.Result {
+    public func validate(_ password: String) -> Validator.Result {
 
         let failingRules = rules.filter { !$0.evaluate(password) }
 
         if failingRules.count == 0 {
 
-            return .OK
+            return .ok
 
         } else {
 
-            return .Failure(failingRules)
+            return .failure(failingRules)
 
         }
     }
@@ -95,10 +95,10 @@ public func ==(lhs: Validator.Result, rhs: Validator.Result) -> Bool {
 
     switch (lhs, rhs) {
 
-    case (.OK, .OK):
+    case (.ok, .ok):
         return true
 
-    case (.Failure(let lrs), .Failure(let rrs)):
+    case (.failure(let lrs), .failure(let rrs)):
         return lrs.count == rrs.count && lrs.description == rrs.description
 
     default:

@@ -2,15 +2,15 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 **Password Validator & Strength Evaluator** *influenced by [Navajo](https://github.com/mattt/Navajo)*.  
-Ainu is completely written in Swift 2.
+Ainu is completely written in Swift 3.
 
-> Ainu is named in honour of the famed non-Japonic Languages speakers in Hokkaido, Japan.
+> Ainu is named in honour of the famed non-Japonic Languages speakers in the north of Japan.
 
 ## Requirement
 
 - OSX 10.10+
-- iOS 8.0+
-- watchOS 2.0+
+- iOS 9.0+
+- watchOS 3.0+
 - tvOS 9.0+
 
 ## Installation

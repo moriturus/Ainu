@@ -30,38 +30,38 @@ import CoreGraphics
 public enum Strength: CustomStringConvertible, Comparable {
 
     /// The password is empty.
-    case Empty
+    case empty
     /// The password is very weak.
-    case VeryWeak
+    case veryWeak
     /// The password is weak.
-    case Weak
+    case weak
     /// The password is not bad.
-    case Reasonable
+    case reasonable
     /// The password is strong.
-    case Strong
+    case strong
     /// The password is very strong.
-    case VeryStrong
+    case veryStrong
 
-    private var intValue: Int {
+    fileprivate var intValue: Int {
 
         switch self {
 
-        case .Empty:
+        case .empty:
             return -1
 
-        case .VeryWeak:
+        case .veryWeak:
             return 0
 
-        case .Weak:
+        case .weak:
             return 1
 
-        case .Reasonable:
+        case .reasonable:
             return 2
 
-        case .Strong:
+        case .strong:
             return 3
 
-        case .VeryStrong:
+        case .veryStrong:
             return 4
 
         }
@@ -72,22 +72,22 @@ public enum Strength: CustomStringConvertible, Comparable {
 
         switch self {
 
-        case .Empty:
+        case .empty:
             return NSLocalizedString("Empty", tableName: "Ainu", comment: "Empty")
 
-        case .VeryWeak:
+        case .veryWeak:
             return NSLocalizedString("Very Weak Password", tableName: "Ainu", comment: "very weak password")
 
-        case .Weak:
+        case .weak:
             return NSLocalizedString("Weak Password", tableName: "Ainu", comment: "weak password")
 
-        case .Reasonable:
+        case .reasonable:
             return NSLocalizedString("Reasonable Password", tableName: "Ainu", comment: "reasonable password")
 
-        case .Strong:
+        case .strong:
             return NSLocalizedString("Strong Password", tableName: "Ainu", comment: "strong password")
 
-        case .VeryStrong:
+        case .veryStrong:
             return NSLocalizedString("Very Strong Password", tableName: "Ainu", comment: "very strong password")
 
         }
@@ -118,23 +118,23 @@ public enum Strength: CustomStringConvertible, Comparable {
 
         switch entropy {
 
-        case -(CGFloat.max) ..< 0.0:
-            self = .Empty
+        case -(CGFloat.greatestFiniteMagnitude) ..< 0.0:
+            self = .empty
 
         case 0.0 ..< 28.0:
-            self = .VeryWeak
+            self = .veryWeak
 
         case 28.0 ..< 36.0:
-            self = .Weak
+            self = .weak
 
         case 36.0 ..< 60.0:
-            self = .Reasonable
+            self = .reasonable
 
         case 60.0 ..< 128.0:
-            self = .Strong
+            self = .strong
 
         default:
-            self = .VeryStrong
+            self = .veryStrong
 
         }
 
@@ -149,11 +149,11 @@ public enum Strength: CustomStringConvertible, Comparable {
     - returns: entropy
 
     */
-    private static func entropy(string: String) -> CGFloat {
+    private static func entropy(_ string: String) -> CGFloat {
 
         guard string.characters.count != 0 else {
 
-            return -CGFloat.max
+            return -CGFloat.greatestFiniteMagnitude
 
         }
 
@@ -169,49 +169,49 @@ public enum Strength: CustomStringConvertible, Comparable {
 
         string.utf16.forEach { c in
 
-            if !includesLowercaseCharacter && NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember(c) {
+            if !includesLowercaseCharacter && CharacterSet.lowercaseLetters.contains(UnicodeScalar(c)!) {
 
                 includesLowercaseCharacter = true
                 sizeOfCharacters += 26
 
             }
 
-            if !includesUppercaseCharacter && NSCharacterSet.uppercaseLetterCharacterSet().characterIsMember(c) {
+            if !includesUppercaseCharacter && CharacterSet.uppercaseLetters.contains(UnicodeScalar(c)!) {
 
                 includesUppercaseCharacter = true
                 sizeOfCharacters += 26
 
             }
 
-            if !includesDecimalDigitCharacter && NSCharacterSet.decimalDigitCharacterSet().characterIsMember(c) {
+            if !includesDecimalDigitCharacter && CharacterSet.decimalDigits.contains(UnicodeScalar(c)!) {
 
                 includesDecimalDigitCharacter = true
                 sizeOfCharacters += 10
 
             }
 
-            if !includesPunctuationCharacter && NSCharacterSet.punctuationCharacterSet().characterIsMember(c) {
+            if !includesPunctuationCharacter && CharacterSet.punctuationCharacters.contains(UnicodeScalar(c)!) {
 
                 includesPunctuationCharacter = true
                 sizeOfCharacters += 20
 
             }
 
-            if !includesSymbolCharacter && NSCharacterSet.symbolCharacterSet().characterIsMember(c) {
+            if !includesSymbolCharacter && CharacterSet.symbols.contains(UnicodeScalar(c)!) {
 
                 includesSymbolCharacter = true
                 sizeOfCharacters += 10
 
             }
 
-            if !includesWhitespaceCharacter && NSCharacterSet.whitespaceCharacterSet().characterIsMember(c) {
+            if !includesWhitespaceCharacter && CharacterSet.whitespaces.contains(UnicodeScalar(c)!) {
 
                 includesWhitespaceCharacter = true
                 sizeOfCharacters += 1
 
             }
 
-            if !includesNonBaseCharacter && NSCharacterSet.nonBaseCharacterSet().characterIsMember(c) {
+            if !includesNonBaseCharacter && CharacterSet.nonBaseCharacters.contains(UnicodeScalar(c)!) {
 
                 includesNonBaseCharacter = true
                 sizeOfCharacters += 32 + 128

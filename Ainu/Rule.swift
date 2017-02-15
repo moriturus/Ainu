@@ -46,14 +46,14 @@ public protocol RuleType {
     - returns: If it confirms to the condition, `true`, otherwise `false`.
 
     */
-    func evaluate(string: String) -> Bool
+    func evaluate(_ string: String) -> Bool
 
 }
 
 /// Rule of allowed characters.
 public struct AllowedCharacterRule: RuleType {
 
-    private let disallowedCharacters: NSCharacterSet
+    private let disallowedCharacters: CharacterSet
 
     public var localizedErrorDescription: String {
         return NSLocalizedString("Must not include disallowed character", tableName: "Ainu", comment: "disallowed")
@@ -66,15 +66,15 @@ public struct AllowedCharacterRule: RuleType {
     - parameter allowedCharacters: Characters set you allowed.
 
     */
-    public init(allowedCharacters: NSCharacterSet) {
+    public init(allowedCharacters: CharacterSet) {
 
-        self.disallowedCharacters = allowedCharacters.invertedSet
+        self.disallowedCharacters = allowedCharacters.inverted
 
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
-        return string.rangeOfCharacterFromSet(disallowedCharacters) == .None
+        return string.rangeOfCharacter(from: disallowedCharacters) == .none
 
     }
 
@@ -83,7 +83,7 @@ public struct AllowedCharacterRule: RuleType {
 /// Rule of required characters.
 public struct RequiredCharacterRule: RuleType {
 
-    private let requiredCharacters: NSCharacterSet
+    private let requiredCharacters: CharacterSet
     public private(set) var localizedErrorDescription: String
 
     /**
@@ -94,7 +94,7 @@ public struct RequiredCharacterRule: RuleType {
     - parameter errorDescription: Error description.
 
     */
-    public init(requiredCharacters: NSCharacterSet, errorDescription: String) {
+    public init(requiredCharacters: CharacterSet, errorDescription: String) {
 
         self.requiredCharacters = requiredCharacters
         self.localizedErrorDescription = errorDescription
@@ -108,7 +108,7 @@ public struct RequiredCharacterRule: RuleType {
     - parameter requiredCharacters: Characters set you specified to be required.
 
     */
-    public init(requiredCharacters: NSCharacterSet) {
+    public init(requiredCharacters: CharacterSet) {
 
         self.init(
             requiredCharacters: requiredCharacters,
@@ -127,7 +127,7 @@ public struct RequiredCharacterRule: RuleType {
     public static func lowercaseCharacterRequiredRule() -> RequiredCharacterRule {
 
         return RequiredCharacterRule(
-            requiredCharacters: NSCharacterSet.lowercaseLetterCharacterSet(),
+            requiredCharacters: CharacterSet.lowercaseLetters,
             errorDescription: NSLocalizedString("Must include lowercase character", tableName: "Ainu", comment: "lowercase")
         )
 
@@ -143,7 +143,7 @@ public struct RequiredCharacterRule: RuleType {
     public static func uppercaseCharacterRequiredRule() -> RequiredCharacterRule {
 
         return RequiredCharacterRule(
-            requiredCharacters: NSCharacterSet.uppercaseLetterCharacterSet(),
+            requiredCharacters: CharacterSet.uppercaseLetters,
             errorDescription: NSLocalizedString("Must include upper character", tableName: "Ainu", comment: "uppercase")
         )
 
@@ -159,7 +159,7 @@ public struct RequiredCharacterRule: RuleType {
     public static func decimalDigitCharacterRequiredRule() -> RequiredCharacterRule {
 
         return RequiredCharacterRule(
-            requiredCharacters: NSCharacterSet.decimalDigitCharacterSet(),
+            requiredCharacters: CharacterSet.decimalDigits,
             errorDescription: NSLocalizedString("Must include decimal digit character", tableName: "Ainu", comment: "digit")
         )
 
@@ -175,25 +175,25 @@ public struct RequiredCharacterRule: RuleType {
     public static func symbolCharacterRequiredRule() -> RequiredCharacterRule {
 
         let characterSet = NSMutableCharacterSet()
-        characterSet.formUnionWithCharacterSet(NSCharacterSet.symbolCharacterSet())
-        characterSet.formUnionWithCharacterSet(NSCharacterSet.punctuationCharacterSet())
+        characterSet.formUnion(with: CharacterSet.symbols)
+        characterSet.formUnion(with: CharacterSet.punctuationCharacters)
 
         return RequiredCharacterRule(
-            requiredCharacters: characterSet,
+            requiredCharacters: characterSet as CharacterSet,
             errorDescription: NSLocalizedString("Must include symbol character", tableName: "Ainu", comment: "symbol")
         )
 
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
-        return string.rangeOfCharacterFromSet(requiredCharacters) != .None
+        return string.rangeOfCharacter(from: requiredCharacters) != .none
 
     }
 
 }
 
-private let nonLowercaseCharacters = NSCharacterSet.lowercaseLetterCharacterSet().invertedSet
+private let nonLowercaseCharacters = CharacterSet.lowercaseLetters.inverted
 
 #if os(OSX) || os(iOS) // tvOS does not have UIReferenceLibraryViewController class.
 
@@ -208,13 +208,13 @@ public struct NonDictionaryWordRule: RuleType {
         // do nothing
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
-        let term = string.lowercaseString.stringByTrimmingCharactersInSet(nonLowercaseCharacters)
+        let term = string.lowercased().trimmingCharacters(in: nonLowercaseCharacters)
 
         #if os(OSX)
 
-            let range = DCSGetTermRangeInString(nil, term, 0)
+            let range = DCSGetTermRangeInString(nil, term as CFString, 0)
 
             return range.location == kCFNotFound
 
@@ -242,7 +242,7 @@ public struct LengthRule: RuleType {
         public let maximum: UInt
 
         /// convert to `Range<Int>` structure
-        private var range: Range<UInt> {
+        fileprivate var range: CountableRange<UInt> {
 
             return minimum ..< maximum
 
@@ -283,7 +283,7 @@ public struct LengthRule: RuleType {
 
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
         return length.range.contains(UInt(string.characters.count))
 
@@ -310,9 +310,9 @@ public struct PredicateRule: RuleType {
 
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
-        return predicate.evaluateWithObject(string)
+        return predicate.evaluate(with: string)
 
     }
 
@@ -340,9 +340,9 @@ public struct RegularExpressionRule: RuleType {
 
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
-        return regex.numberOfMatchesInString(string, options: NSMatchingOptions(), range: NSRange(location: 0, length: string.characters.count)) > 0
+        return regex.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: string.characters.count)) > 0
 
     }
 
@@ -352,7 +352,7 @@ public struct RegularExpressionRule: RuleType {
 public struct FunctionalRule: RuleType {
 
     public let localizedErrorDescription = NSLocalizedString("Must match the rule of specified function", tableName: "Ainu", comment: "functional")
-    private let function: String -> Bool
+    private let function: (String) -> Bool
 
     /**
 
@@ -361,13 +361,13 @@ public struct FunctionalRule: RuleType {
     - parameter function: The function to be evaluated.
 
     */
-    public init(function: String -> Bool) {
+    public init(function: @escaping (String) -> Bool) {
 
         self.function = function
 
     }
 
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
 
         return function(string)
 
@@ -395,7 +395,7 @@ public struct StrengthRule: RuleType {
         self.strength = strength
     }
     
-    public func evaluate(string: String) -> Bool {
+    public func evaluate(_ string: String) -> Bool {
         
         return strength <= Strength(password: string)
         

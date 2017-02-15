@@ -28,7 +28,7 @@ class AinuTests: XCTestCase {
         let password = ""
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength == .Empty, "password strength was not Empty: actually \(strength)")
+        XCTAssertTrue(strength == .empty, "password strength was not Empty: actually \(strength)")
         
     }
     
@@ -37,7 +37,7 @@ class AinuTests: XCTestCase {
         let password = " "
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength == .VeryWeak, "password strength was not Very Weak: actually \(strength)")
+        XCTAssertTrue(strength == .veryWeak, "password strength was not Very Weak: actually \(strength)")
         
     }
     
@@ -46,7 +46,7 @@ class AinuTests: XCTestCase {
         let password = "012345678"
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength == .Weak, "password strength was not Weak: actually \(strength)")
+        XCTAssertTrue(strength == .weak, "password strength was not Weak: actually \(strength)")
         
     }
     
@@ -55,7 +55,7 @@ class AinuTests: XCTestCase {
         let password = "0123456."
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength == .Reasonable, "password strength was not Reasonable: actually \(strength)")
+        XCTAssertTrue(strength == .reasonable, "password strength was not Reasonable: actually \(strength)")
         
     }
     
@@ -64,7 +64,7 @@ class AinuTests: XCTestCase {
         let password = "012345678aB.+"
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength == .Strong, "password strength was not Strong: actually \(strength)")
+        XCTAssertTrue(strength == .strong, "password strength was not Strong: actually \(strength)")
         
     }
     
@@ -73,7 +73,7 @@ class AinuTests: XCTestCase {
         let password = "012345678aB.+ 日本語"
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength == .Strong, "password strength was not Very Strong: actually \(strength)")
+        XCTAssertTrue(strength == .strong, "password strength was not Very Strong: actually \(strength)")
         
     }
     
@@ -82,7 +82,7 @@ class AinuTests: XCTestCase {
         let password = "012345678aB.+ 日本語"
         let strength = Strength(password: password)
         
-        XCTAssertTrue(strength >= .Reasonable, "password strength was not Reasonable and above: actually \(strength)")
+        XCTAssertTrue(strength >= .reasonable, "password strength was not Reasonable and above: actually \(strength)")
         
     }
     
@@ -94,7 +94,7 @@ class AinuTests: XCTestCase {
         let password = "01234567"
         let result = validator.validate(password)
         
-        XCTAssertTrue(result == .OK, "password was not validated.")
+        XCTAssertTrue(result == .ok, "password was not validated.")
         
     }
     
@@ -104,7 +104,7 @@ class AinuTests: XCTestCase {
         let password = "0123456"
         let result = validator.validate(password)
         
-        XCTAssertTrue(result != .OK, "password was validated.")
+        XCTAssertTrue(result != .ok, "password was validated.")
         
     }
     
@@ -117,7 +117,7 @@ class AinuTests: XCTestCase {
         let password = "0123456789"
         let result = validator.validate(password)
         
-        XCTAssertTrue(result == .OK, "password was not validated.")
+        XCTAssertTrue(result == .ok, "password was not validated.")
         
     }
     
@@ -125,7 +125,7 @@ class AinuTests: XCTestCase {
     
     func testAllowedCharacterRuleSuccess() {
         
-        let allowedCharacters = NSCharacterSet(charactersInString: "password")
+        let allowedCharacters = CharacterSet(charactersIn: "password")
         let password = "sdwpsroa"
         
         let rule = AllowedCharacterRule(allowedCharacters: allowedCharacters)
@@ -137,7 +137,7 @@ class AinuTests: XCTestCase {
     
     func testAllowedCharacterRuleFailure() {
         
-        let allowedCharacters = NSCharacterSet(charactersInString: "password")
+        let allowedCharacters = CharacterSet(charactersIn: "password")
         let password = "hello world"
         
         let rule = AllowedCharacterRule(allowedCharacters: allowedCharacters)
@@ -311,7 +311,7 @@ class AinuTests: XCTestCase {
     func testRegularExpressionRuleSuccess() {
         
         let password = "password0"
-        let regex = try! NSRegularExpression(pattern: "^password[0-9]$", options: NSRegularExpressionOptions())
+        let regex = try! NSRegularExpression(pattern: "^password[0-9]$", options: NSRegularExpression.Options())
         
         let rule = RegularExpressionRule(regularExpression: regex)
         let result = rule.evaluate(password)
@@ -323,7 +323,7 @@ class AinuTests: XCTestCase {
     func testRegularExpressionRuleFailure() {
         
         let password = "password"
-        let regex = try! NSRegularExpression(pattern: "^[0-9]$", options: NSRegularExpressionOptions())
+        let regex = try! NSRegularExpression(pattern: "^[0-9]$", options: NSRegularExpression.Options())
         
         let rule = RegularExpressionRule(regularExpression: regex)
         let result = rule.evaluate(password)
@@ -332,7 +332,7 @@ class AinuTests: XCTestCase {
         
     }
     
-    func match(s: String) -> Bool {
+    func match(_ s: String) -> Bool {
         return s == "password"
     }
     
@@ -362,7 +362,7 @@ class AinuTests: XCTestCase {
         
         let password = "password02052016"
         
-        let rule = StrengthRule(strength: .Reasonable)
+        let rule = StrengthRule(strength: .reasonable)
         let result = rule.evaluate(password)
         
         XCTAssertTrue(result, "password must be reasonable strength")
@@ -373,7 +373,7 @@ class AinuTests: XCTestCase {
         
         let password = "12345"
         
-        let rule = StrengthRule(strength: .Reasonable)
+        let rule = StrengthRule(strength: .reasonable)
         let result = rule.evaluate(password)
         
         XCTAssertFalse(result, "password must not be reasonable strength")

@@ -2,7 +2,7 @@
 //  Strength.swift
 //  Ainu
 //
-//  Copyright (c) 2015 Henrique Sasaki Yuya (http://alimensir.com)
+//  Copyright (c) 2017 Henrique Sasaki Yuya (moriturus@alimensir.com)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -151,7 +151,7 @@ public enum Strength: CustomStringConvertible, Comparable {
     */
     private static func entropy(_ string: String) -> CGFloat {
 
-        guard string.characters.count != 0 else {
+        guard !string.isEmpty else {
 
             return -CGFloat.greatestFiniteMagnitude
 

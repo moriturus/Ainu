@@ -111,7 +111,7 @@ class AinuTests: XCTestCase {
     func testCustomRuleValidator() {
         
         let rule = FunctionalRule {
-            return $0.characters.count == 10
+            return $0.count == 10
         }
         let validator = Validator(rules: [rule])
         let password = "0123456789"

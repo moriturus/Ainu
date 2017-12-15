@@ -2,7 +2,7 @@
 //  Rule.swift
 //  Ainu
 //
-//  Copyright (c) 2015 Henrique Sasaki Yuya (http://alimensir.com)
+//  Copyright (c) 2017 Henrique Sasaki Yuya (moriturus@alimensir.com)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -285,7 +285,7 @@ public struct LengthRule: RuleType {
 
     public func evaluate(_ string: String) -> Bool {
 
-        return length.range.contains(UInt(string.characters.count))
+        return length.range.contains(UInt(string.count))
 
     }
 
@@ -342,7 +342,7 @@ public struct RegularExpressionRule: RuleType {
 
     public func evaluate(_ string: String) -> Bool {
 
-        return regex.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: string.characters.count)) > 0
+        return regex.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: string.count)) > 0
 
     }
 

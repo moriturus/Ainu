@@ -1,8 +1,8 @@
 # Ainu
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![MIT License](https://img.shields.io/github/license/moriturus/Ainu.svg)
 
 **Password Validator & Strength Evaluator** *influenced by [Navajo](https://github.com/mattt/Navajo)*.  
-Ainu is completely written in Swift 3.
+Ainu is completely written in Swift 4.
 
 > Ainu is named in honour of the famed non-Japonic Languages speakers in the north of Japan.
 
@@ -18,7 +18,7 @@ Ainu is completely written in Swift 3.
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 ```
-github "moriturus/Ainu" ~> 2.0
+github "moriturus/Ainu" ~> 4.0
 ```
 
 ## Usage

@@ -23,23 +23,14 @@
 //  THE SOFTWARE.
 //
 
+public struct ValidationError: Error {
+    public let failedRules: [Rule]
+}
+
 /// Password validator
 public struct Validator {
-
-    /// Rule type
-    public typealias Rule = RuleType
-
-    /// Result type
-    public enum Result: Equatable {
-
-        case ok
-        case failure([Rule])
-
-    }
-
     /// rules
     private var rules: [Rule]
-
     /**
 
     Initializes with default rule.
@@ -47,11 +38,8 @@ public struct Validator {
 
     */
     public init() {
-
         self.init(rules: [LengthRule(minimum: 8, maximum: 128)])
-
     }
-
     /**
 
     Initializes with rules.
@@ -60,11 +48,8 @@ public struct Validator {
 
     */
     public init(rules: [Rule]) {
-
         self.rules = rules
-
     }
-
     /**
 
     Validates password string.
@@ -74,36 +59,12 @@ public struct Validator {
     - returns: Validation result. If the validation failed, `failure([rule])` has the failing rules.
 
     */
-    public func validate(_ password: String) -> Validator.Result {
-
+    public func validate(_ password: String) -> Result<(), ValidationError> {
         let failingRules = rules.filter { !$0.evaluate(password) }
-
         if failingRules.count == 0 {
-
-            return .ok
-
+            return .success(())
         } else {
-
-            return .failure(failingRules)
-
+            return .failure(ValidationError(failedRules: failingRules))
         }
     }
-
-}
-
-public func ==(lhs: Validator.Result, rhs: Validator.Result) -> Bool {
-
-    switch (lhs, rhs) {
-
-    case (.ok, .ok):
-        return true
-
-    case (.failure(let lrs), .failure(let rrs)):
-        return lrs.count == rrs.count && lrs.description == rrs.description
-
-    default:
-        return false
-
-    }
-
 }

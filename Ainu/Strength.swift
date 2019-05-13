@@ -165,71 +165,52 @@ public enum Strength: CustomStringConvertible, Comparable {
         var includesWhitespaceCharacter  = false
         var includesNonBaseCharacter  = false
 
-        var sizeOfCharacters: UInt = 0
-
-        string.utf16.forEach { c in
-
-            if !includesLowercaseCharacter && CharacterSet.lowercaseLetters.contains(UnicodeScalar(c)!) {
-
+        let base: UInt = string.unicodeScalars.reduce(0) { (accm, c) in
+            var accm = accm
+            if !includesLowercaseCharacter && CharacterSet.lowercaseLetters.contains(c) {
                 includesLowercaseCharacter = true
-                sizeOfCharacters += 26
-
+                accm += 26
             }
-
-            if !includesUppercaseCharacter && CharacterSet.uppercaseLetters.contains(UnicodeScalar(c)!) {
-
+            
+            if !includesUppercaseCharacter && CharacterSet.uppercaseLetters.contains(c) {
                 includesUppercaseCharacter = true
-                sizeOfCharacters += 26
-
+                accm += 2
             }
-
-            if !includesDecimalDigitCharacter && CharacterSet.decimalDigits.contains(UnicodeScalar(c)!) {
-
+            
+            if !includesDecimalDigitCharacter && CharacterSet.decimalDigits.contains(c) {
                 includesDecimalDigitCharacter = true
-                sizeOfCharacters += 10
-
+                accm += 10
             }
-
-            if !includesPunctuationCharacter && CharacterSet.punctuationCharacters.contains(UnicodeScalar(c)!) {
-
+            
+            if !includesPunctuationCharacter && CharacterSet.punctuationCharacters.contains(c) {
                 includesPunctuationCharacter = true
-                sizeOfCharacters += 20
-
+                accm += 20
             }
-
-            if !includesSymbolCharacter && CharacterSet.symbols.contains(UnicodeScalar(c)!) {
-
+            
+            if !includesSymbolCharacter && CharacterSet.symbols.contains(c) {
                 includesSymbolCharacter = true
-                sizeOfCharacters += 10
-
+                accm += 10
             }
-
-            if !includesWhitespaceCharacter && CharacterSet.whitespaces.contains(UnicodeScalar(c)!) {
-
+            
+            if !includesWhitespaceCharacter && CharacterSet.whitespaces.contains(c) {
                 includesWhitespaceCharacter = true
-                sizeOfCharacters += 1
-
+                accm += 1
             }
-
-            if !includesNonBaseCharacter && CharacterSet.nonBaseCharacters.contains(UnicodeScalar(c)!) {
-
+            
+            if !includesNonBaseCharacter && CharacterSet.nonBaseCharacters.contains(c) {
                 includesNonBaseCharacter = true
-                sizeOfCharacters += 32 + 128
-
+                accm += 32 + 128
             }
-
+            
+            return accm
         }
-
-        let entropyPerCharacter = log2(CGFloat(sizeOfCharacters))
-
-        return entropyPerCharacter * CGFloat(string.utf16.count)
-
+        
+        let entropyPerCharacter = log2(CGFloat(base))
+        return entropyPerCharacter * CGFloat(string.unicodeScalars.count)
     }
 
 }
 
 public func <(lhs: Strength, rhs: Strength) -> Bool {
-
     return lhs.intValue < rhs.intValue
-
 }

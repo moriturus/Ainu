@@ -9,6 +9,21 @@
 import XCTest
 @testable import Ainu
 
+extension Result {
+    var isSuccess: Bool {
+        switch self {
+        case .success(_):
+            return true
+        case .failure(_):
+            return false
+        }
+    }
+    
+    var isFailure: Bool {
+        return !self.isSuccess
+    }
+}
+
 class AinuTests: XCTestCase {
     
     override func setUp() {
@@ -94,7 +109,7 @@ class AinuTests: XCTestCase {
         let password = "01234567"
         let result = validator.validate(password)
         
-        XCTAssertTrue(result == .ok, "password was not validated.")
+        XCTAssertTrue(result.isSuccess, "password was not validated.")
         
     }
     
@@ -104,7 +119,7 @@ class AinuTests: XCTestCase {
         let password = "0123456"
         let result = validator.validate(password)
         
-        XCTAssertTrue(result != .ok, "password was validated.")
+        XCTAssertTrue(result.isFailure, "password was validated.")
         
     }
     
@@ -117,7 +132,7 @@ class AinuTests: XCTestCase {
         let password = "0123456789"
         let result = validator.validate(password)
         
-        XCTAssertTrue(result == .ok, "password was not validated.")
+        XCTAssertTrue(result.isSuccess, "password was not validated.")
         
     }
     

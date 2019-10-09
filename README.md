@@ -15,10 +15,19 @@ Ainu is completely written in Swift 4.
 
 ## Installation
 
-### [Carthage](https://github.com/Carthage/Carthage)
+**If you want to use `Carthage`, please use the commitment tagged `5.0.1`**
 
-```
-github "moriturus/Ainu" ~> 4.0
+### Swift Package Manager
+
+Add this lines to your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/moriturus/Ainu.git",
+        from: "6.0.0"
+    )
+]
 ```
 
 ## Usage
@@ -71,7 +80,6 @@ NSLog(strength.description) // prints "Very Weak"
 ## Contact
 
 [Henrique Sasaki Yuya](https://github.com/moriturus)
-[@moriturus](https://twitter.com/moriturus)
 
 ## License
 
